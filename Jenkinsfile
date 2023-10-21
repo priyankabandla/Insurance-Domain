@@ -1,6 +1,6 @@
 node{
     
-    def mavenHome = '/opt/apache-maven-3.6.3'
+    def mavenHome
     def mavenCMD
     def docker
     def mavenCMD
