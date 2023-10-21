@@ -3,13 +3,9 @@ node{
     def mavenHome
     def mavenCMD
     def docker
-    def mavenCMD
-    def docker
-    def mavenCMD
-    def docker
     def dockerCMD
     def tagName
-    
+ 
     stage('prepare enviroment'){
         echo 'initialize all the variables'
         mavenHome = tool name: 'maven' , type: 'maven'
