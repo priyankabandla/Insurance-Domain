@@ -7,12 +7,5 @@
   - name: updating apt
     command : sudo apt-get update
 
-  - name: Run docker container
-    docker: 
-      name: insure-me
-      image: thirumaleshtiru/insure-me:3.0
-      state: started
-      ports:
-      - "8084:8081"
-        #- name: Deploy Docker Container
-        #command: docker run -itd -p 8084:8081 thirumaleshtiru/insure-me:3.0
+  - name: Deploy Docker Container
+    command: docker run -itd -p 8084:8081 thirumaleshtiru/insure-me:3.0
