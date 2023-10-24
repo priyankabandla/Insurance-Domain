@@ -1,12 +1,18 @@
 - name : Configure Docker on EC2 Instances
   hosts : all
   become: true
-  become_user: ubuntu
+  become_user: root
   connection : ssh
   tasks : 
   - name: updating apt
     command : sudo apt-get update
 
-
-  - name: Deploy Docker Container
-    command: docker run -itd -p 8084:8081 thirumaleshtiru/insure-me:3.0
+  - name: Run docker container
+    docker: 
+      name: insure-me
+      image: thirumaleshtiru/insure-me:3.0
+      state: started
+      ports:
+      - "8084:8081"
+        #- name: Deploy Docker Container
+        #command: docker run -itd -p 8084:8081 thirumaleshtiru/insure-me:3.0
